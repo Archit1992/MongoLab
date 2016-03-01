@@ -18,8 +18,11 @@ import vo.ValueProperty;
 
 public class DatabaseProperty {
 	
-	private static List<DBObject> list=null;
+	private static List<DBObject> list=null; // List for return list of data.
 	
+	
+	
+	//============================================Insert DAO============================================
 	public void insert(ValueProperty voObj) {
 		// TODO Auto-generated method stub
 
@@ -40,7 +43,8 @@ public class DatabaseProperty {
 		
 
 	}
-
+	
+	//============================================ Search DAO=============================================
 	public List<DBObject> search() {
 		
 		// TODO Auto-generated method stub
@@ -58,7 +62,8 @@ public class DatabaseProperty {
 		
 		return list;
 	}
-
+	
+	//==============================================Edit DAO================================================
 	public List<DBObject> edit(ValueProperty voObj) {
 		// TODO Auto-generated method stub
 		
@@ -76,7 +81,7 @@ public class DatabaseProperty {
 		BasicDBObject query= new BasicDBObject();
 		
 		
-		System.out.println("QUERY MADE=========================");
+		System.out.println("QUERY MADE========>");
 		objid.put("$oid", voObj.getObjId().toString());
 		
 		ObjectId id=new ObjectId(voObj.getObjId().toString());
@@ -94,7 +99,8 @@ public class DatabaseProperty {
 		return list;
 		
 	}
-
+	
+	//================================================Update DAO=============================================
 	public void update(ValueProperty voObj) {
 		// TODO Auto-generated method stub
 		MongoClientURI uri = new MongoClientURI("mongodb://<dbuser>:<dbpassword>@ds<dbport>.mlab.com:<dbport>/<dbname>");
@@ -125,7 +131,8 @@ public class DatabaseProperty {
 		
 		
 	}
-
+	
+	//==============================================Delete DAO=================================================
 	public void delete(ValueProperty voObj) {
 		// TODO Auto-generated method stub
 		
